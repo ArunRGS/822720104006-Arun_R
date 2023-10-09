@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button class="login-button" type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        
+        const form = document.querySelector('form');
+        const backgroundColors = ["#007bff", "#ff6b6b", "#4caf50", "#ff9800"];
+        let currentColorIndex = 0;
+
+        
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = backgroundColors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % backgroundColors.length;
+        }
+
+    
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            changeBackgroundColor();
+        });
+    </script>
+</body>
+</html>
